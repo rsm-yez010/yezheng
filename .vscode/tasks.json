@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "Live Preview",
+			"workspacePath": "/Users/kris/Desktop/2025WORK/quarto_website",
+			"problemMatcher": [],
+			"label": "Live Preview: Run Server"
+		}
+	]
+}

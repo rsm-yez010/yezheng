@@ -154,6 +154,7 @@ plt.show()
 ```
 In next step, We loop through values of `k` from 1 to 30, fitting a KNN model on the training set each time. For every value of `k`, we use the model to predict labels on the test set and compute the accuracy. This helps us evaluate which `k` offers the best generalization performance.
 ```{python}
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
 accuracies = []
@@ -161,7 +162,7 @@ K_values = range(1, 31)
 
 for k in K_values:
     knn = KNeighborsClassifier(n_neighbors=k)
-    knn.fit(df[['x1', 'x2']], df['y'])  # train on original dataset
+    knn.fit(test_df[['x1', 'x2']], test_df['y']) 
     y_pred = knn.predict(test_df[['x1', 'x2']])
     acc = accuracy_score(test_df['y'], y_pred)
     accuracies.append(acc)
